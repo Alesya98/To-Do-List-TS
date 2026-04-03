@@ -6,7 +6,7 @@ type InputTaskProps = {
     tasks: TaskProps[]
 }
 
-const InputTask= ({ setTask }): InputTaskProps => {
+const InputTask= ({ setTask, tasks}: InputTaskProps) => {
     const [text, setText] = useState<string>('')
     const [error, setError] = useState<string>('')
 
@@ -18,12 +18,13 @@ const InputTask= ({ setTask }): InputTaskProps => {
             return
         }
         setError('')
-        setTask(tasks => [
-            ...tasks,
-            {
-                id: crypto.randomUUID(), title: text, isDone: false
-            }
-        ]);
+
+        const newTasks: TaskProps = {
+            id: crypto.randomUUID(),
+            title: text,
+            isDone: false
+        }
+        setTask([...tasks, newTasks]);
 
         setText('')
     }

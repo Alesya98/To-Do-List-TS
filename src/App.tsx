@@ -76,7 +76,7 @@ function App() {
   return (
     <>
       <Header />
-      <InputTask setTask={setTask} />
+      <InputTask setTask={setTask} tasks={tasks} />
       <DeleteTaskContext value={valueContext}>
       <ToDoList tasks={filteredTask} />
       </DeleteTaskContext>
