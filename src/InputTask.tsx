@@ -1,4 +1,4 @@
-import { memo, useState, type ChangeEvent } from "react"
+import { memo, useState, type ChangeEvent} from "react"
 import type { TaskProps } from "./App";
 
 type InputTaskProps = {
@@ -6,7 +6,7 @@ type InputTaskProps = {
     tasks: TaskProps[]
 }
 
-const InputTask= ({ setTask, tasks}: InputTaskProps) => {
+const InputTask: React.FC<InputTaskProps> = ({ setTask, tasks}) => {
     const [text, setText] = useState<string>('')
     const [error, setError] = useState<string>('')
 
